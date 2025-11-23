@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farlands SMP | Mini Game</title>
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<style>
+body {
+    background: #1c1c1c;
+    color: #fff;
+    font-family: 'Minecraft', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background: #101010;
+    padding: 15px 0;
+    border-bottom: 4px solid #000;
+}
+header .logo {
+    font-size: 32px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav a:hover {
+    color: #55ff55;
+}
+
+/* GAME STYLES */
+#game-area {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.block {
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5K_O1qx8oLehZwCAK_QlM8ke9Zp5SY83Xsg&s'); /* Minecraft block texture */
+    background-size: cover;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.block:active {
+    transform: translateY(3px);
+}
+#score {
+    font-size: 26px;
+    margin-top: 20px;
+    color: #55ff55;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Farlands SMP Mini Game</div>
+    <nav>
+        <ul>
+            <li><a href="index1.html">Home</a></li>
+            <li><a href="Rules.html">Rules</a></li>
+            <li><a href="vote.html">Vote</a></li>
+            <li><a href="discord.html">Discord</a></li>
+            <li><a href="tutorial.html">Tutotrial</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Click the Blocks to Mine!</h1>
+<p>Mine blocks to earn points. Can you get 100 points?</p>
+<div id="game-area"></div>
+<div id="score">Score: 0</div>
+
+<script>
+// Game Variables
+const gameArea = document.getElementById('game-area');
+const scoreDisplay = document.getElementById('score');
+let score = 0;
+
+// Create 12 blocks
+for(let i=0; i<12; i++){
+    const block = document.createElement('div');
+    block.classList.add('block');
+    block.addEventListener('click', () => {
+        score += Math.floor(Math.random() * 10) + 5; // earn 5-14 points
+        scoreDisplay.textContent = "Score: " + score;
+        block.style.visibility = 'hidden'; // "mined"
+        setTimeout(() => {
+            block.style.visibility = 'visible';
+        }, 2000); // block respawns after 2s
+    });
+    gameArea.appendChild(block);
+}
+</script>
+
+</body>
+</html>

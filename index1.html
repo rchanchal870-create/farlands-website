@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farlands SMP – Official Website</title>
+
+<!-- Minecraft Pixel Font -->
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+<style>
+/* ---------------------------------------------------------
+   GLOBAL
+--------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Minecraft', sans-serif;
+  background: #1c1c1c;
+  color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin: 60px 0 20px;
+  text-shadow: 3px 3px 0 #000;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+header {
+  background: #101010;
+  padding: 15px 0;
+  border-bottom: 4px solid #000;
+}
+
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 32px;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #55ff55;
+}
+
+/* ---------------------------------------------------------
+   HERO SECTION – UPDATED IMAGE
+--------------------------------------------------------- */
+
+.hero {
+  height: 520px;
+  background: url('https://wallpapercat.com/w/full/7/1/7/87371-3840x2160-desktop-4k-minecraft-wallpaper.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  text-shadow: 4px 4px 0 #000;
+}
+
+.hero h1 {
+  font-size: 70px;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.ip-box {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 12px 20px;
+  background: #4CAF50;
+  border: 4px solid #000;
+  font-size: 22px;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+}
+
+.ip-box:hover {
+  transform: translate(-3px, -3px);
+}
+
+/* ---------------------------------------------------------
+   ABOUT SECTION
+--------------------------------------------------------- */
+
+.about {
+  background: #262626;
+  padding: 40px;
+  border: 5px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  margin-top: 40px;
+}
+
+.about p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   FEATURES GRID
+--------------------------------------------------------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.feature-box {
+  background: #303030;
+  padding: 20px;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  min-height: 180px;
+}
+
+.feature-box h3 {
+  margin-bottom: 10px;
+  color: #55ff55;
+}
+
+/* ---------------------------------------------------------
+   RULES PREVIEW
+--------------------------------------------------------- */
+
+.rules {
+  background: #262626;
+  border: 5px solid #000;
+  padding: 30px;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.rules ul {
+  list-style: square;
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+/* ---------------------------------------------------------
+   VOTE BOX
+--------------------------------------------------------- */
+
+.vote-box {
+  background: #303030;
+  padding: 20px;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.vote-box a {
+  color: #55ff55;
+  font-size: 22px;
+}
+
+/* ---------------------------------------------------------
+   PLAYER STATS
+--------------------------------------------------------- */
+
+.stats-box {
+  background: #303030;
+  padding: 25px;
+  border: 4px solid #000;
+  text-align: center;
+  box-shadow: 6px 6px 0 #000;
+  margin-top: 40px;
+}
+
+#playerCount {
+  font-size: 30px;
+  color: #55ff55;
+}
+
+/* ---------------------------------------------------------
+   NEWS SECTION
+--------------------------------------------------------- */
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+}
+
+.news-card {
+  background: #2b2b2b;
+  border: 4px solid #000;
+  padding: 20px;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.news-card h3 {
+  margin-bottom: 10px;
+  color: #55ff55;
+}
+
+.news-card p {
+  font-size: 18px;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+footer {
+  margin-top: 60px;
+  background: #0d0d0d;
+  padding: 40px;
+  text-align: center;
+  border-top: 4px solid #000;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .hero {
+    padding-left: 20px;
+    text-align: center;
+  }
+  .features,
+  .news {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="logo">Farlands SMP</div>
+    <nav>
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="Rules.html">Rules</a></li>
+        <li><a href="vote.html">Vote</a></li>
+        <li><a href="discord.html">Discord</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="game.html">Mini Game</a></li>
+        <li><a href="tutorial.html">Tutotrial</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Farlands SMP</h1>
+    <p>Survive. Explore. Build in the mysterious lands beyond the world.</p>
+    <div class="ip-box" onclick="copyIP()">Ip : FarluMC.aternos.me</div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- ABOUT -->
+<h2 class="section-title">About Our SMP</h2>
+
+<div class="about">
+  <p>
+    Farlands SMP is a community-driven Minecraft survival server where players
+    explore untouched terrain, build powerful empires, survive harsh biomes,
+    and discover many secrets as they journey toward the legendary Far Lands.
+    No pay-to-win. No unfair advantages. Just pure survival.
+  </p>
+</div>
+
+<!-- FEATURES -->
+<h2 class="section-title">Server Features</h2>
+
+<div class="features">
+  <div class="feature-box">
+    <h3>✔ Survival Experience</h3>
+    <p>Classic SMP gameplay with custom enhancements.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✔ Player Economy</h3>
+    <p>Trade, set shops, and build your empire.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✔ Land Claiming</h3>
+    <p>Protect your builds from griefers.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✔ Custom Mobs</h3>
+    <p>Face unique challenges and rare creatures.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✔ Seasons</h3>
+    <p>Seasonal resets + new world events.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✔ Events</h3>
+    <p>Weekly challenges, PvP battles, and tournaments.</p>
+  </div>
+</div>
+
+<!-- RULES -->
+<h2 class="section-title">Rules Preview</h2>
+
+<div class="rules">
+  <ul>
+    <li>No griefing or stealing</li>
+    <li>Be respectful to all players</li>
+    <li>No hacking or unfair mods</li>
+    <li>No spamming or advertising</li>
+    <li>Follow staff instructions</li>
+  </ul>
+</div>
+
+<!-- VOTE -->
+<h2 class="section-title">Vote & Earn Rewards</h2>
+
+<div class="vote-box">
+  <a href="#">✔ Vote Link 1</a><br><br>
+  <a href="#">✔ Vote Link 2</a><br><br>
+  <a href="#">✔ Vote Link 3</a>
+</div>
+
+<!-- PLAYER COUNT -->
+<h2 class="section-title">Live Player Count</h2>
+
+<div class="stats-box">
+  <div id="playerCount">Checking...</div>
+</div>
+
+<!-- NEWS -->
+<h2 class="section-title">Latest News</h2>
+
+<div class="news">
+  <div class="news-card">
+    <h3>Season 2 Launch!</h3>
+    <p>The world resets with new features, dungeons, and bosses.</p>
+  </div>
+
+  <div class="news-card">
+    <h3>New Crates Update</h3>
+    <p>Earn rewards through events, voting, and exploration.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Farlands SMP | Community Survival Server
+</footer>
+
+<script>
+// Copy IP function
+function copyIP() {
+  navigator.clipboard.writeText("FarluMC.aternos.me");
+  alert("Server IP copied!");
+}
+
+// Live Player Counter
+fetch("https://api.mcsrvstat.us/2/FarluMC.aternos.me")
+  .then(res => res.json())
+  .then(data => {
+    const count = data?.players?.online ?? 0;
+    document.getElementById("playerCount").innerText =
+      count + " players online";
+  })
+  .catch(() => {
+    document.getElementById("playerCount").innerText =
+      "Unable to fetch data";
+  });
+</script>
+
+</body>
+</html>
